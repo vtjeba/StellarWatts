@@ -1,8 +1,200 @@
 /********** Template CSS **********/
 :root {
-    --primary: #32C36C;
-    --light: #F6F7F8;
-    --dark: #1A2A36;
+    --primary: #FF7A1A;
+    --light: #F7F7F7;
+    --dark: #111111;
+    --primary-hover: #E56710;
+    --charcoal: #111111;
+    --border-soft: #E5E5E5;
+}
+
+
+/* ==============================
+   Global Typography Improvements
+   Improves readability across all pages
+============================== */
+
+body {
+    color: #444444;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Paragraph and general content readability */
+p,
+span,
+li {
+    color: #555555;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Keep headings strong and clear */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #111111;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Hero carousel text should remain white */
+.header-carousel h1,
+.header-carousel p,
+.owl-carousel-inner h1,
+.owl-carousel-inner p {
+    color: #FFFFFF !important;
+}
+
+/* Feature/statistics section readability */
+.container-xxl .col-lg-3 span,
+.feature-text p,
+.about-text p,
+.quote-text p {
+    color: #4D4D4D;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Service card content */
+.service-item p {
+    color: #4A4A4A;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Testimonials */
+.testimonial-text p {
+    color: #444444;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Forms */
+.form-control,
+.form-select,
+textarea {
+    color: #444444;
+    font-weight: 500;
+}
+
+/* Better small text visibility */
+small {
+    font-weight: 500;
+    color: #666666;
+}
+
+/* Topbar normal text */
+.bg-dark small:not(.fa):not(.fas):not(.far) {
+    color: #BDBDBD;
+    font-weight: 500;
+}
+
+/* Topbar icons */
+.bg-dark small.fa,
+.bg-dark small.fas,
+.bg-dark small.far {
+    color: var(--primary) !important;
+    font-family: "Font Awesome 5 Free" !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Solid icons */
+.bg-dark small.fa,
+.bg-dark small.fas {
+    font-weight: 900 !important;
+}
+
+/* Regular icons like clock */
+.bg-dark small.far {
+    font-weight: 400 !important;
+}
+
+/* StellarWatts brand overrides - logo based orange/black theme */
+
+::selection {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-dark {
+    background-color: var(--charcoal) !important;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+.border-primary {
+    border-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+.btn-primary:focus,
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 .25rem rgba(255, 122, 26, .25) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+    color: #FFFFFF !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.spinner-border.text-primary {
+    color: var(--primary) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 122, 26, .18) !important;
+}
+
+.navbar .navbar-brand h2 {
+    color: var(--dark) !important;
+    letter-spacing: .5px;
+}
+
+.navbar .navbar-brand h2::first-letter {
+    color: var(--primary);
 }
 
 .fw-medium {
@@ -158,7 +350,7 @@
     left: 0;
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, .1);
+    background: linear-gradient(90deg, rgba(5, 5, 5, .72) 0%, rgba(5, 5, 5, .36) 45%, rgba(5, 5, 5, .08) 100%);
 }
 
 @media (max-width: 768px) {
@@ -328,7 +520,7 @@
     width: 0;
     height: 100%;
     top: 0;
-    background: var(--dark);
+    background: rgba(5, 5, 5, .78);
     transition: .5s;
 }
 
@@ -580,3 +772,156 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+/* Restore footer quick links original color */
+.footer .btn.btn-link {
+    color: #9B9B9B !important;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary) !important;
+}
+
+/* ==============================
+   About & Free Quote Alignment Fix
+   Keeps split image/text sections aligned without changing HTML
+============================== */
+#about .row,
+#quote .row {
+    align-items: stretch;
+}
+
+#about .about-text,
+#quote .quote-text {
+    display: flex;
+    align-items: center;
+}
+
+#about .about-text > div,
+#quote .quote-text > div {
+    width: 100%;
+}
+
+#about .position-relative.h-100,
+#quote .position-relative.h-100 {
+    min-height: 100%;
+}
+
+#about img,
+#quote img {
+    object-fit: cover;
+}
+
+#about .about-text p,
+#quote .quote-text p {
+    line-height: 1.65;
+    margin-bottom: 1rem;
+}
+
+#about .about-text h1,
+#quote .quote-text h1 {
+    margin-bottom: 1.25rem !important;
+}
+
+@media (min-width: 992px) {
+    #about .col-lg-6.ps-lg-0,
+    #quote .col-lg-6.ps-lg-0 {
+        min-height: 520px !important;
+    }
+
+    #about .about-text,
+    #quote .quote-text {
+        min-height: 520px;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #about .col-lg-6.ps-lg-0,
+    #quote .col-lg-6.ps-lg-0 {
+        min-height: 320px !important;
+    }
+
+    #about .about-text,
+    #quote .quote-text {
+        display: block;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Fix About & Free Quote alignment */
+@media (min-width: 992px) {
+    .container.about,
+    .container.quote {
+        max-width: 1320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .about .row,
+    .quote .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .about-text,
+    .quote-text {
+        padding-left: 48px !important;
+        padding-right: 48px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .about-text,
+    .quote-text {
+        padding: 30px 20px !important;
+    }
+}
+
+/* Header social media icons orange */
+.container-fluid.bg-dark .btn.btn-sm-square i,
+.container-fluid.bg-dark .btn.btn-link i,
+.container-fluid.bg-dark .fab {
+    color: var(--primary) !important;
+}
+
+/* Header social icon hover */
+.container-fluid.bg-dark .btn.btn-sm-square:hover i,
+.container-fluid.bg-dark .btn.btn-link:hover i {
+    color: #FFFFFF !important;
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 48px;
+    }
+}
+
+/* Website Logo */
+.main-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Mobile logo */
+@media (max-width: 768px) {
+    .main-logo {
+        height: 55px;
+    }
+}
+
+/* Navbar height */
+/*.navbar .navbar-brand,
+.navbar a.btn {
+    height: 60px;
+}*/

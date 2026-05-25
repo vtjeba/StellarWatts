@@ -93,6 +93,14 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
+
+    // Close mobile navbar after menu click
+    $('.navbar-nav .nav-link').on('click', function () {
+        if ($('.navbar-toggler').is(':visible')) {
+            $('.navbar-collapse').collapse('hide');
+        }
+    });
+
     
 })(jQuery);
 
